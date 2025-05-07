@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Moon } from 'lucide-react';
 import CTAButton from './CTAButton';
+import Flag from "../assets/pngwing.com.png";
 
 const HeroSection: React.FC = () => {
   return (
@@ -95,45 +96,18 @@ const HeroSection: React.FC = () => {
           
           <div className="md:w-1/2 mt-10 md:mt-0">
             <motion.div 
-              className="relative w-full h-[300px] md:h-[400px]"
+              className="relative w-full h-[800px] md:h-[500px]"
+              style={{
+              backgroundImage: `url(${Flag})`,
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center',
+              filter: 'drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.7))'
+              }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
             >
-              <motion.div 
-                className="absolute inset-0 bg-pak-green rounded-lg overflow-hidden shadow-2xl"
-                style={{
-                  backgroundImage: "url('https://images.pexels.com/photos/1697913/pexels-photo-1697913.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
-                }}
-                animate={{ 
-                  backgroundPosition: ['center', 'center top', 'center']
-                }}
-                transition={{ 
-                  duration: 20,
-                  repeat: Infinity,
-                  repeatType: 'reverse' 
-                }}
-              >
-                <div className="absolute inset-0 bg-pak-green opacity-40"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.img 
-                    src="https://flagpedia.net/data/flags/ultra/pk.png"
-                    alt="Pakistan Flag"
-                    className="h-full max-h-52 object-contain"
-                    animate={{ 
-                      y: [0, -10, 0],
-                      rotateZ: [0, 1, 0]
-                    }}
-                    transition={{ 
-                      repeat: Infinity,
-                      duration: 6,
-                      ease: "easeInOut" 
-                    }}
-                  />
-                </div>
-              </motion.div>
             </motion.div>
           </div>
         </div>
